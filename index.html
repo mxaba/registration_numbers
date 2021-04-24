@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Numbers</title>
     <link rel="stylesheet" href="./css/registration_number.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    
 </head>
 <body>
+
+    <div class="ount">
+        <h3>Registration Number</h3>
+        <div class="error"></div>
+        <div class="errorOne"></div>
+    </div>
+
     <div class="row">
-        <div class="col">
+        <div class="col-1">
             <span>Registration Number: </span>
             <input type="text" class="regNumber" placeholder="Registration number">
         </div>
@@ -22,13 +31,14 @@
                 <option value="CJ">Paarl</option>
                 <option value="CAA">George</option>
             </select>
-        </div>
+        </div> <br>
         <button class="add" type="button" name="button">Add</button>
         <button class="remove" type="button" name="button">Remove</button>
     </div>
-    <div class="labels">
+    <div class="regNumbersList">
         "CA 78678"
     </div>
-    <script src=""></script>
+    <script src="./js/function-logic.js"></script>
+    <script src="./js/function.js"></script>
 </body>
 </html>
