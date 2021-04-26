@@ -11,33 +11,58 @@
 </head>
 <body>
 
-    <div class="ount">
-        <h3>Registration Number</h3>
-        <div class="error"></div>
-        <div class="errorOne"></div>
-    </div>
-
-    <div class="row">
-        <div class="col-1">
-            <span>Registration Number: </span>
-            <input type="text" class="regNumber" placeholder="Registration number">
+    <div class="col-12">
+        <div class="row">
+            <div class="6">
+                <div class="registNumber">
+                    <span>
+                        <h1>Registration Numbers</h1>
+                        <input type="text" id="idea" class="regField" placeholder="Registration Number"
+                        onkeyup="this.value=this.value.toUpperCase()" value="">
+                    </span>
+                    <button class="addBtn">Add</button>
+                </div>
+                <div><p>Fomart we Accept: <br> <i> AB 123456</i> and BC 123 456 </p></div>
+            </div>
         </div>
 
-        
-        <div class="dropdown">
-            <span>Town: </span>    <select name="button" type="button" id="">
-                <option value="CA">Cape Town</option>
-                <option value="CL">Stellenbosch</option>
-                <option value="CJ">Paarl</option>
-                <option value="CAA">George</option>
-            </select>
-        </div> <br>
-        <button class="add" type="button" name="button">Add</button>
-        <button class="remove" type="button" name="button">Clear</button>
+        <div class="error">
+
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="flitters">
+                    <input type="radio" name="flitter" value="CY" id="" class="radioFlitter"> Bellville
+                    <input type="radio" name="flitter" value="CA" id="" class="radioFlitter">Cape Town
+                    <input type="radio" name="flitter" value="CJ" id="" class="radioFlitter"> Paarl
+                    <input type="radio" name="flitter" value="CL" id="" class="radioFlitter"> Stellenbosch
+                    <input type="radio" name="flitter" value="" id="" class="radioFlitter"> All
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="displayBtn">
+                    <button class="showBtn">Show</button>
+                    <button class="resetBtn">Reset</button>
+                    <!-- <button class="deleteBtn">Delete</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul id="RegistrationList" style="list-style: none;">
+                    <div class="regNumbersList">
+                        
+                    </div>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="regNumbersList">
-        "CA 78678"
-    </div>
+
     <script src="./js/function-logic.js"></script>
     <script src="./js/function.js"></script>
 </body>

@@ -1,61 +1,63 @@
-function registrationFunction(){
-    let myLocal = {}
-    let registrationNumber = ''
-
-    function inputCheck(name){
-        var capName = name.toUpperCase()
-        return capName.startsWith('CA') || capName.startsWith('CAA') ||
-                capName.startsWith('CJ') || capName.startsWith('CL')
-    }
-
-    function error(name){
-        return name == '' || !isNaN(name)
-    }
-
-    function validateRegNumber(name){
-        var repeat = false
-        for (var i = 0; i < name.lenght; i++){
-            var element = name[i]
-            var regElement = element.registration
-            if (myLocal[regElement] == undefined){
-                myLocal[regElement] = 0
-            } else {
-                myLocal[regElement] += 1
-            }
+function registrationFunction(regNumbersList){
+    let myLocal = regNumbersList || []
+    var error = ''
+    
+    function addRegToList(name){
+        error = ''
+        if (myLocal === '' || name == ''){
+            error = 'Please enter a registration number!'
+            return false
         }
 
-        //closing the repaet of the function so that it doesn't duplicate
-        var newRegistration = getMyLocal()
-        for(var key in myLocal){
-            if (myLocal.hasOwnProperty(newRegistration)){
-                repeat = true
-                break
-            }
+        // if (!name.startsWith('CY') || !name.startsWith('CA') || !name.startsWith('CJ') || !name.startsWith('CL')){
+        //     error = "We don't register/Support that here!"
+        //     return false
+        // }
+
+        var regOne = /([A-Z]){2}\s+([0-9]){3}\s([0-9]){3}/g;
+        var regexOne = regOne.test(name)
+
+        var regTwo = /([A-Z]){2}\-+([0-9]){3}\-([0-9]){3}/g
+        var regexTwo = regTwo.test(name)
+
+        var reg = /[A-Z]{2}\s[0-9]{6}/g;
+        var regex = reg.test(name)
+        if (!regex && !regexOne && !regexTwo) {
+            error = 'Please Check the registration exaple above'
+            return false
         }
-        return repeat
+
+        if (!myLocal.includes(name)){
+            myLocal.push(name)
+            return true
+        } else {
+            error = 'Registration number already exist will be removed!'
+        }
     }
 
-    function setRegistration(namePassed){
-        registration = namePassed.toUpperCase()
-    }
-
-    function setMyLocal(){
-        myLocal = {
-            registration: registrationNumber
-        }
+    function getErrors(){
+        return error
     }
 
     function getMyLocal(){
         return myLocal
     }
 
+    function regFlitter(nameOfTown){
+        var array = []
+        myLocal.forEach(i => {
+            if (i.startsWith(nameOfTown)){
+                array.push(i)
+            }
+        })
+        return array
+    }
+
     return {
-        getMyLocal,
-        setMyLocal,
-        error,
-        inputCheck,
-        setRegistration,
-        validateRegNumber
+        regFlitter,
+        getErrors,
+        addRegToList,
+        getMyLocal
     }
     
 }
