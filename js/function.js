@@ -1,6 +1,7 @@
 var errorMessage = document.querySelector('.error')
 var addBut = document.querySelector('.addBtn')
 var resetBtn = document.querySelector('.resetBtn')
+var clearMessage = document.querySelector('.clearMessage')
 var showBtn = document.querySelector('.showBtn')
 
 let informationRegNumbers = []
@@ -76,6 +77,9 @@ showBtn.addEventListener('click', flitter)
 addBut.addEventListener('click', addClicked)
 
 resetBtn.addEventListener('click', function(){
-    localStorage.removeItem('registrationNumber')
-    location.reload()
+    localStorage.clear()
+    clearMessage.innerHTML = 'The storage will be cleared in 3 seconds!'
+    setTimeout(function(){
+        location.reload()
+    }, 3000)
 })
