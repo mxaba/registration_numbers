@@ -8,7 +8,8 @@ let informationRegNumbers = []
 if (localStorage['registrationNumber']){
     informationRegNumbers = JSON.parse(localStorage['registrationNumber'])
 }
-var createRegistration = registrationFunction(informationRegNumbers)
+var createRegistration = registrationFunction()
+createRegistration.initMyLocal(informationRegNumbers)
 
 numbersListHTML(createRegistration.getMyLocal())
 
@@ -29,11 +30,12 @@ function createElem(name){
 function addClicked(){
     var regField = document.querySelector('.regField').value
     var validateReg = createRegistration.addRegToList(regField)
-    regField = ''
 
     if (!validateReg) {
+        document.querySelector('.regField').value = ""
         errorMessage.innerHTML = createRegistration.getErrors();
         errors()
+        // regField = ''
         return
     } else {
         var regField = document.querySelector('.regField').value
@@ -42,7 +44,9 @@ function addClicked(){
         document.getElementById('RegistrationList').appendChild(regNumberElem)
         errorMessage.innerHTML = ''
         localStorage.setItem('registrationNumber', JSON.stringify(createRegistration.getMyLocal()))
+        document.querySelector('.regField').value = ""
     }
+
 }
 
 function numbersListHTML(name){

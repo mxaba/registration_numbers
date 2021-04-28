@@ -1,5 +1,5 @@
-function registrationFunction(regNumbersList){
-    let myLocal = regNumbersList || []
+function registrationFunction(){
+    let myLocal = []
     var error = ''
     
     function addRegToList(name){
@@ -31,8 +31,13 @@ function registrationFunction(regNumbersList){
             myLocal.push(name)
             return true
         } else {
-            error = 'Registration number already exist will be removed!'
+            error = 'Registration already there please check it under all!'
+            myLocal.slice(name)
         }
+    }
+
+    function initMyLocal(array){
+        myLocal = array
     }
 
     function getErrors(){
@@ -55,6 +60,7 @@ function registrationFunction(regNumbersList){
 
     return {
         regFlitter,
+        initMyLocal,
         getErrors,
         addRegToList,
         getMyLocal
