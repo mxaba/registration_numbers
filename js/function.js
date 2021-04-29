@@ -3,6 +3,7 @@ var addBut = document.querySelector('.addBtn')
 var resetBtn = document.querySelector('.resetBtn')
 var clearMessage = document.querySelector('.clearMessage')
 var showBtn = document.querySelector('.showBtn')
+var succ = document.querySelector('.succ')
 
 let informationRegNumbers = []
 
@@ -45,6 +46,11 @@ function addClicked(){
         document.getElementById('RegistrationList').appendChild(regNumberElem)
         errorMessage.innerHTML = ''
         localStorage.setItem('registrationNumber', JSON.stringify(createRegistration.getMyLocal()))
+        succ.innerHTML = "Registration added.."
+        setTimeout(function(){
+            succ.innerHTML = ""
+        }, 3000)
+        
         document.querySelector('.regField').value = ""
     }
 
@@ -64,6 +70,10 @@ function flitter(){
     if (radioFlitter != null){
         var radioFlitterChecked = radioFlitter.value
         var regFlitterd = createRegistration.regFlitter(radioFlitterChecked)
+
+        if (regFlitterd.length == 0){
+            errorMessage.innerHTML = 'This town has no registration number plates!'
+        }
         document.getElementById('RegistrationList').innerHTML = ''
         numbersListHTML(regFlitterd)
     } else {

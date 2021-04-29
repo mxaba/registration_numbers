@@ -9,6 +9,11 @@ function registrationFunction(){
             return false
         }
 
+        if (!name.length >= 6 && !name.length <= 10){
+            error = 'Please a valid registration number!'
+            return false
+        }
+
         // if (!name.startsWith('CY') || !name.startsWith('CA') || !name.startsWith('CJ') || !name.startsWith('CL')){
         //     error = "We don't register/Support that here!"
         //     return false

@@ -30,3 +30,9 @@ a{
   color: white;
   background-color: black;
 }
+
+.succ {
+    color: green;
+    font-size: large;
+    font-weight: 10px;
+}
