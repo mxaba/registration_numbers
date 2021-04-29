@@ -23,7 +23,7 @@ function registrationFunction(){
         var reg = /[A-Z]{2}\s[0-9]{6}/g;
         var regex = reg.test(name)
         if (!regex && !regexOne && !regexTwo) {
-            error = 'Please Check the registration exaple above'
+            error = 'Please Check the registration explained above'
             return false
         }
 
