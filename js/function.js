@@ -73,6 +73,7 @@ function flitter(){
 
         if (regFlitterd.length == 0){
             errorMessage.innerHTML = 'This town has no registration number plates!'
+            errors()
         }
         document.getElementById('RegistrationList').innerHTML = ''
         numbersListHTML(regFlitterd)

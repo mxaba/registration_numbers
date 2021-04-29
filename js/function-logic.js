@@ -9,7 +9,7 @@ function registrationFunction(){
             return false
         }
 
-        if (!name.length >= 6 && !name.length <= 10){
+        if (!(name.length >= 9) || !(name.length <= 10)){
             error = 'Please a valid registration number!'
             return false
         }
@@ -19,13 +19,13 @@ function registrationFunction(){
         //     return false
         // }
 
-        var regOne = /([A-Z]){2}\s+([0-9]){3}\s([0-9]){3}/g;
+        var regOne = /([A-Z]){2}\s+([0-9]){3}\s([0-9]){3}/;
         var regexOne = regOne.test(name)
 
-        var regTwo = /([A-Z]){2}\-+([0-9]){3}\-([0-9]){3}/g
+        var regTwo = /([A-Z]){2}\-+([0-9]){3}\-([0-9]){3}/
         var regexTwo = regTwo.test(name)
 
-        var reg = /[A-Z]{2}\s[0-9]{6}/g;
+        var reg = /[A-Z]{2}\s[0-9]{6}/;
         var regex = reg.test(name)
         if (!regex && !regexOne && !regexTwo) {
             error = 'Please Check the registration explained above'
