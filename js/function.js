@@ -15,6 +15,9 @@ createRegistration.initMyLocal(informationRegNumbers)
 
 numbersListHTML(createRegistration.getMyLocal())
 
+// var str = 'mcebo-mxaba'
+// let newStr = str.replace('-','_');
+// console.log(newStr)
 
 function errors(){
     setTimeout(function(){
