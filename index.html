@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="./css/skeleton.css">
     
 </head>
-<body>
+<body class="row">
 
-    <div class="col-12">
+    <div class="col-6">
         <div class="row">
-            <div class="6">
+            <div class="">
                 <div class="registNumber">
                     <span>
-                        <h1>Registration Numbers</h1>
-                        <input type="text" id="idea" class="regField" placeholder="Registration Number"
+                        <h3>Registration Numbers</h3>
+                        <input type="text" class="regField" placeholder="Registration Number"
                         onkeyup="this.value=this.value.toUpperCase()" value="">
                     </span>
                     <button class="addBtn">Add</button>
@@ -62,6 +62,67 @@
                 <div class="clearMessage"></div>
                 <ul id="RegistrationList" style="list-style: none;">
                     <div class="regNumbersList">
+                        
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- This will be using the template -->
+
+    <div class="col-6 temp">
+        <div class="row">
+            <div class="">
+                <div class="registNumber">
+                    <span>
+                        <h3>Registration Numbers Template</h3>
+                        <input type="text" class="regFieldTemp" placeholder="Registration Number"
+                        onkeyup="this.value = this.value.toUpperCase()" value="">
+                    </span>
+                    <button class="addBtnTemp">Add</button>
+                </div>
+                <div><p>Fomart we Accept: <br> <i> [AB-123-456] </i> <i> [AB 123456]</i> and [BC 123 456] </p></div>
+            </div>
+        </div>
+
+        <div class="succTemp">
+
+        </div>
+
+        <div class="errorTemp">
+
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="flitters">
+                    <input type="radio" name="flitterTemp" value="CY" id="" class="radioFlitter"> Bellville
+                    <input type="radio" name="flitterTemp" value="CA" id="" class="radioFlitter">Cape Town
+                    <input type="radio" name="flitterTemp" value="CJ" id="" class="radioFlitter"> Paarl
+                    <input type="radio" name="flitterTemp" value="CL" id="" class="radioFlitter"> Stellenbosch
+                    <input type="radio" name="flitterTemp" value="" id="" class="radioFlitter"> All
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="displayBtn">
+                    <button class="showBtnTemp">Show</button>
+                    <button class="resetBtnTemp">Reset</button>
+                    <a href="./test/">TDD</a>
+                    <!-- <button class="deleteBtn">Delete</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="clearMessage"></div>
+                <ul id="RegistrationListTemp" style="list-style: none;">
+                    <div class="regNumbersListTemp">
                         
                     </div>
                 </ul>

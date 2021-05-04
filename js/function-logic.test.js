@@ -10,19 +10,19 @@ describe('Plate Number Registration', function(){
         it('Should return appropriate error message when fomart is wrong', function(){
             var registration = registrationFunction()
             registration.addRegToList('BD123456')
-            assert.equal('Please Check the registration explained above', registration.getErrors())
+            assert.equal('Please a valid registration number!', registration.getErrors())
             
             registration.addRegToList('0123456')
-            assert.equal('Please Check the registration explained above', registration.getErrors())
+            assert.equal('Please a valid registration number!', registration.getErrors())
 
             assert.equal(false, registration.addRegToList('BBBBBB'))
-            assert.equal('Please Check the registration explained above', registration.getErrors())
+            assert.equal('Please a valid registration number!', registration.getErrors())
         })
 
         it('Should return appropriate error message when already registered', function(){
             var registration = registrationFunction()
             registration.addRegToList('BD123456')
-            assert.equal('Please Check the registration explained above', registration.getErrors())
+            assert.equal('Please a valid registration number!', registration.getErrors())
         })
     })
 

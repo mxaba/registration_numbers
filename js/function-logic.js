@@ -18,16 +18,7 @@ function registrationFunction(){
         //     error = "We don't register/Support that here!"
         //     return false
         // }
-
-        var regOne = /([A-Z]){2}\s+([0-9]){3}\s([0-9]){3}/;
-        var regexOne = regOne.test(name)
-
-        var regTwo = /([A-Z]){2}\-+([0-9]){3}\-([0-9]){3}/
-        var regexTwo = regTwo.test(name)
-
-        var reg = /[A-Z]{2}\s[0-9]{6}/;
-        var regex = reg.test(name)
-        if (!regex && !regexOne && !regexTwo) {
+        if (!/([A-Z]){2}\s+([0-9]){3}\s([0-9]){3}/.test(name) && !/([A-Z]){2}\-+([0-9]){3}\-([0-9]){3}/.test(name) && !/[A-Z]{2}\s[0-9]{6}/.test(name)) {
             error = 'Please Check the registration explained above'
             return false
         }
