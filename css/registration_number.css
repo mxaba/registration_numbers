@@ -23,9 +23,19 @@ li{
     color: red;
 }
 
+.errorTemp{
+    color: red;
+}
+
 .clearMessage {
     color: green;
     font-size: 20px;
+}
+
+.succTemp {
+    color: green;
+    font-size: large;
+    font-weight: 10px;
 }
 
 a{

@@ -7,7 +7,16 @@
     <title>Registration Numbers</title>
     <link rel="stylesheet" href="./css/registration_number.css">
     <link rel="stylesheet" href="./css/skeleton.css">
-    
+
+    <script type="text/x-template" class="numberPlate">
+        <div class="regNumbersListTemp">
+            {{#each myTemp}}
+            <li class="">
+              {{this}}
+            </li>
+            {{/each}}
+          </div>
+    </script>
 </head>
 <body class="row">
 
@@ -131,6 +140,7 @@
     </div>
 
     <script src="./js/function-logic.js"></script>
+    <script src="./js/function-template.js"></script>
     <script src="./js/function.js"></script>
 </body>
 </html>

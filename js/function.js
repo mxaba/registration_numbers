@@ -91,7 +91,7 @@ showBtn.addEventListener('click', flitter)
 addBut.addEventListener('click', addClicked)
 
 resetBtn.addEventListener('click', function(){
-    localStorage.clear()
+    localStorage.removeItem('registrationNumber')
     clearMessage.innerHTML = 'The storage will be cleared in 3 seconds!'
     setTimeout(function(){
         location.reload()
