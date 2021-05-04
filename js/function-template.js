@@ -12,12 +12,6 @@ if (localStorage['registrationNumbersTemp']){
 var createTemp = registrationFunction()
 createTemp.initMyLocal(informationRegNumbersTemp)
 
-function error(){
-    setTimeout(function(){
-        errr.innerHTML = ''
-    }, 2500)
-}
-
 function addRegistrationTemp(){
     var regFieldTemp = document.querySelector('.regFieldTemp').value
     console.log(regFieldTemp)
@@ -39,10 +33,23 @@ function addRegistrationTemp(){
         setTimeout(function(){
             succTemp.innerHTML = ""
         }, 3000)
-        
         document.querySelector('.regFieldTemp').value = ""
     }
 
 }
 
+function error(){
+    setTimeout(function(){
+        errr.innerHTML = ''
+    }, 2500)
+}
+
 document.querySelector('.addBtnTemp').addEventListener('click', addRegistrationTemp)
+
+document.querySelector('.resetBtnTemp').addEventListener('click', function(){
+    localStorage.removeItem('registrationNumbersTemp')
+    document.querySelector('.clearMessageTem').innerHTML = 'The storage will be cleared in 3 seconds!'
+    setTimeout(function(){
+        location.reload()
+    }, 3000)
+})

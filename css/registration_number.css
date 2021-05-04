@@ -32,6 +32,11 @@ li{
     font-size: 20px;
 }
 
+.clearMessageTem {
+    color: green;
+    font-size: 20px;
+}
+
 .succTemp {
     color: green;
     font-size: large;
