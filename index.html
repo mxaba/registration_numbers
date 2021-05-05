@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Numbers</title>
-    <link rel="stylesheet" href="./css/registration_number.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <link rel="stylesheet" href="./css/registration_number.css">
     <link rel="stylesheet" href="./css/skeleton.css">
 
     <script type="text/x-template" class="numberPlate">
-        <div class="regNumbersListTemp">
-            {{#each myTemp}}
+        <!-- <div class="regNumbersListTemp"> -->
+            {{#each numberListTemplate}}
             <li class="">
               {{this}}
             </li>
             {{/each}}
-          </div>
+          <!-- </div> -->
     </script>
 </head>
 <body class="row">

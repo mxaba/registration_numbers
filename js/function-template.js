@@ -1,4 +1,8 @@
-var numberPlate = document.querySelector('.numberPlate')
+var numberPlate = document.querySelector('.numberPlate').innerHTML
+var compliedNuPlate = Handlebars.compile(numberPlate)
+var regNumbersListTemp = document.querySelector('.regNumbersListTemp').innerHTML
+
+
 var errr = document.querySelector('.errorTemp')
 var succTemp = document.querySelector('.succTemp')
 
@@ -29,6 +33,7 @@ function addRegistrationTemp(){
         // var regNumberElem = createElem(regFieldTemp)
         // document.getElementById('RegistrationList').appendChild(regNumberElem)
         localStorage.setItem('registrationNumbersTemp', JSON.stringify(createTemp.getMyLocal()))
+        regNumbersListTemp = compliedNuPlate({numberListTemplate: informationRegNumbersTemp})
         succTemp.innerHTML = "Registration added.."
         setTimeout(function(){
             succTemp.innerHTML = ""
