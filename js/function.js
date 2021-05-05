@@ -68,14 +68,13 @@ function numbersListHTML(name){
 }
 
 function flitter(){
-    errorMessage.innerHTML = ''
     var radioFlitter = document.querySelector('.radioFlitter:checked')
     if (radioFlitter != null){
         var radioFlitterChecked = radioFlitter.value
         var regFlitterd = createRegistration.regFlitter(radioFlitterChecked)
 
         if (regFlitterd.length == 0){
-            errorMessage.innerHTML = 'This town has no registration number plates!'
+            errorMessage.innerHTML =  radioFlitterChecked +' town has no registration number plates!'
             errors()
         }
         document.getElementById('RegistrationList').innerHTML = ''

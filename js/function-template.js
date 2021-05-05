@@ -16,6 +16,25 @@ if (localStorage['registrationNumbersTemp']){
 var createTemp = registrationFunction()
 createTemp.initMyLocal(informationRegNumbersTemp)
 
+document.querySelector('.regNumbersListTemp').innerHTML = compliedNuPlate({numberListTemplate: informationRegNumbersTemp})
+
+function flitterRegTemp(){
+    var flitterTemp = document.querySelector('.radioFlitterTemp:checked')
+    if (flitterTemp){
+        // var checkFlitter = flitterTemp.value
+        var checkFlitter = createTemp.regFlitter(flitterTemp.value)
+        console.log('ínside')
+        if (checkFlitter.length == 0){
+            errr.innerHTML = flitterTemp.value +' has no registration number plates!'
+            error()
+        }
+        document.querySelector('.regNumbersListTemp').innerHTML = compliedNuPlate({numberListTemplate: checkFlitter})
+    }else {
+        errr.innerHTML = 'Select Town First Please!'
+        error()
+    }
+}
+
 function addRegistrationTemp(){
     var regFieldTemp = document.querySelector('.regFieldTemp').value
     // console.log(regFieldTemp)
@@ -42,7 +61,6 @@ function addRegistrationTemp(){
         }, 3000)
         document.querySelector('.regFieldTemp').value = ""
     }
-
 }
 
 function error(){
@@ -52,7 +70,7 @@ function error(){
 }
 
 document.querySelector('.addBtnTemp').addEventListener('click', addRegistrationTemp)
-
+document.querySelector('.showBtnTemp').addEventListener('click', flitterRegTemp)
 document.querySelector('.resetBtnTemp').addEventListener('click', function(){
     localStorage.removeItem('registrationNumbersTemp')
     document.querySelector('.clearMessageTem').innerHTML = 'The storage will be cleared in 3 seconds!'
