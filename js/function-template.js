@@ -18,7 +18,7 @@ createTemp.initMyLocal(informationRegNumbersTemp)
 
 function addRegistrationTemp(){
     var regFieldTemp = document.querySelector('.regFieldTemp').value
-    console.log(regFieldTemp)
+    // console.log(regFieldTemp)
     var validateReg = createTemp.addRegToList(regFieldTemp)
 
     if (!validateReg) {
@@ -29,11 +29,13 @@ function addRegistrationTemp(){
         return
     } else {
         var regFieldTemp = document.querySelector('.regFieldTemp').value
-        console.log(regFieldTemp)
+        // console.log(regFieldTemp)
         // var regNumberElem = createElem(regFieldTemp)
         // document.getElementById('RegistrationList').appendChild(regNumberElem)
         localStorage.setItem('registrationNumbersTemp', JSON.stringify(createTemp.getMyLocal()))
         regNumbersListTemp = compliedNuPlate({numberListTemplate: informationRegNumbersTemp})
+        console.log(compliedNuPlate({numberListTemplate: informationRegNumbersTemp}))
+        document.querySelector('.regNumbersListTemp').innerHTML = compliedNuPlate({numberListTemplate: informationRegNumbersTemp})
         succTemp.innerHTML = "Registration added.."
         setTimeout(function(){
             succTemp.innerHTML = ""
