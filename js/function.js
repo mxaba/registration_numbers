@@ -56,7 +56,6 @@ function addClicked(){
         
         document.querySelector('.regField').value = ""
     }
-
 }
 
 function numbersListHTML(name){
