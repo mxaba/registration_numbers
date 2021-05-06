@@ -10,19 +10,19 @@ describe('Plate Number Registration', function(){
         it('Should return appropriate error message when fomart is wrong', function(){
             var registration = RegistrationFunction()
             registration.addRegToList('BD123456')
-            assert.equal('Please a valid registration number!', registration.getErrors())
+            assert.equal('Please Check the registration explained above', registration.getErrors())
             
             registration.addRegToList('0123456')
-            assert.equal('Please a valid registration number!', registration.getErrors())
+            assert.equal('Please Check the registration explained above', registration.getErrors())
 
             assert.equal(false, registration.addRegToList('BBBBBB'))
-            assert.equal('Please a valid registration number!', registration.getErrors())
+            assert.equal('Please Check the registration explained above', registration.getErrors())
         })
 
         it('Should return appropriate error message when already registered', function(){
             var registration = RegistrationFunction()
             registration.addRegToList('BD123456')
-            assert.equal('Please a valid registration number!', registration.getErrors())
+            assert.equal('Please Check the registration explained above', registration.getErrors())
         })
     })
 
@@ -68,7 +68,7 @@ describe('Plate Number Registration', function(){
             registration.addRegToList('CA 124456')
             registration.addRegToList('CA 129 456')
             registration.addRegToList('CA-129-456')
-            assert.deepEqual([ 'CA 123 456', 'CA 123 496', 'CA 124 456', 'CA 124456' ,'CA 129 456', 'CA-129-456' ], registration.getMyLocal()) 
+            assert.deepEqual([ 'CA 123 456', 'CA 123 496', 'CA 124 456', 'CA 124456' ,'CA 129 456'], registration.getMyLocal()) 
 
             // assert.equal('', registration.getMyLocal())
             // assert.equal('', registration.getMyLocal()) 
@@ -98,21 +98,21 @@ describe('Plate Number Registration', function(){
             registration.addRegToList('CL 129 456')
             registration.addRegToList('CL-129-456')
         it('Should return Olny from Cape Town', function(){   
-            assert.deepEqual([ 'CA 123 456', 'CA 123 496', 'CA 124 456', 'CA 124456' ,'CA 129 456', 'CA-129-456' ], registration.regfilter('CA')) 
+            assert.deepEqual([ 'CA 123 456', 'CA 123 496', 'CA 124 456', 'CA 124456' ,'CA 129 456'], registration.regfilter('CA')) 
 
             // assert.equal('', registration.getMyLocal())
             // assert.equal('', registration.getMyLocal()) 
         })
 
         it('Should return Olny from Stellenbosch', function(){   
-            assert.deepEqual([ 'CL 123 456', 'CL 123 496', 'CL 124 456', 'CL 124456' ,'CL 129 456', 'CL-129-456' ], registration.regfilter('CL')) 
+            assert.deepEqual([ 'CL 123 456', 'CL 123 496', 'CL 124 456', 'CL 124456' ,'CL 129 456',], registration.regfilter('CL')) 
 
             // assert.equal('', registration.getMyLocal())
             // assert.equal('', registration.getMyLocal()) 
         })
 
         it('Should return Olny from Paarl', function(){   
-            assert.deepEqual([ 'CJ 123 456', 'CJ 123 496', 'CJ 124 456', 'CJ 124456' ,'CJ 129 456', 'CJ-129-456' ], registration.regfilter('CJ')) 
+            assert.deepEqual([ 'CJ 123 456', 'CJ 123 496', 'CJ 124 456', 'CJ 124456' ,'CJ 129 456' ], registration.regfilter('CJ')) 
 
             // assert.equal('', registration.getMyLocal())
             // assert.equal('', registration.getMyLocal()) 
