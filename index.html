@@ -10,13 +10,11 @@
     <link rel="stylesheet" href="./css/skeleton.css">
 
     <script type="text/x-template" class="numberPlate">
-        <!-- <div class="regNumbersListTemp"> -->
             {{#each numberListTemplate}}
             <li class="">
               {{this}}
             </li>
             {{/each}}
-          <!-- </div> -->
     </script>
 </head>
 <body class="row">
@@ -32,7 +30,7 @@
                     </span>
                     <button class="addBtn">Add</button>
                 </div>
-                <div><p>Fomart we Accept: <br> <i> [AB-123-456] </i> <i> [AB 123456]</i> and [BC 123 456] </p></div>
+                <div><p>Fomart we Accept: <br> <i> [AB 123-456] </i> <i> [AB 123456]</i> and [BC 123 456] </p></div>
             </div>
         </div>
 
@@ -46,12 +44,12 @@
 
         <div class="row">
             <div class="col-12">
-                <div class="flitters">
-                    <input type="radio" name="flitter" value="CY" id="" class="radioFlitter"> Bellville
-                    <input type="radio" name="flitter" value="CA" id="" class="radioFlitter">Cape Town
-                    <input type="radio" name="flitter" value="CJ" id="" class="radioFlitter"> Paarl
-                    <input type="radio" name="flitter" value="CL" id="" class="radioFlitter"> Stellenbosch
-                    <input type="radio" name="flitter" value="" id="" class="radioFlitter"> All
+                <div class="filters">
+                    <input type="radio" name="filter" value="CY" id="" class="radiofilter"> Bellville
+                    <input type="radio" name="filter" value="CA" id="" class="radiofilter">Cape Town
+                    <input type="radio" name="filter" value="CJ" id="" class="radiofilter"> Paarl
+                    <input type="radio" name="filter" value="CL" id="" class="radiofilter"> Stellenbosch
+                    <input type="radio" name="filter" value="" id="" class="radiofilter"> All
                 </div>
             </div>
         </div>
@@ -61,7 +59,6 @@
                 <div class="displayBtn">
                     <button class="showBtn">Show</button>
                     <button class="resetBtn">Reset</button>
-                    <a href="./test/">TDD</a>
                     <!-- <button class="deleteBtn">Delete</button> -->
                 </div>
             </div>
@@ -93,7 +90,7 @@
                     </span>
                     <button class="addBtnTemp">Add</button>
                 </div>
-                <div><p>Fomart we Accept: <br> <i> [AB-123-456] </i> <i> [AB 123456]</i> and [BC 123 456] </p></div>
+                <div><p>Fomart we Accept: <br> <i> [AB 123-456] </i> <i> [AB 123456]</i> and [BC 123 456] </p></div>
             </div>
         </div>
 
@@ -107,12 +104,12 @@
 
         <div class="row">
             <div class="col-12">
-                <div class="flitters">
-                    <input type="radio" name="flitterTemp" value="CY" id="" class="radioFlitterTemp"> Bellville
-                    <input type="radio" name="flitterTemp" value="CA" id="" class="radioFlitterTemp">Cape Town
-                    <input type="radio" name="flitterTemp" value="CJ" id="" class="radioFlitterTemp"> Paarl
-                    <input type="radio" name="flitterTemp" value="CL" id="" class="radioFlitterTemp"> Stellenbosch
-                    <input type="radio" name="flitterTemp" value="" id="" class="radioFlitterTemp"> All
+                <div class="filters">
+                    <input type="radio" name="filterTemp" value="CY" id="" class="radiofilterTemp"> Bellville
+                    <input type="radio" name="filterTemp" value="CA" id="" class="radiofilterTemp">Cape Town
+                    <input type="radio" name="filterTemp" value="CJ" id="" class="radiofilterTemp"> Paarl
+                    <input type="radio" name="filterTemp" value="CL" id="" class="radiofilterTemp"> Stellenbosch
+                    <input type="radio" name="filterTemp" value="" id="" class="radiofilterTemp"> All
                 </div>
             </div>
         </div>
@@ -122,7 +119,6 @@
                 <div class="displayBtn">
                     <button class="showBtnTemp">Show</button>
                     <button class="resetBtnTemp">Reset</button>
-                    <a href="./test/">TDD</a>
                     <!-- <button class="deleteBtn">Delete</button> -->
                 </div>
             </div>
@@ -140,8 +136,8 @@
         </div>
     </div>
 
-    <script src="./js/function-logic.js"></script>
+    <script src="./js/reg-number-logic.js"></script>
     <script src="./js/function-template.js"></script>
-    <script src="./js/function.js"></script>
+    <script src="./js/reg-number-dom.js"></script>
 </body>
 </html>

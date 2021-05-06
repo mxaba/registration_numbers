@@ -1,5 +1,5 @@
 var numberPlate = document.querySelector('.numberPlate').innerHTML
-var compliedNuPlate = Handlebars.compile(numberPlate)
+var compiledNuPlate = Handlebars.compile(numberPlate)
 var regNumbersListTemp = document.querySelector('.regNumbersListTemp').innerHTML
 
 
@@ -13,22 +13,22 @@ if (localStorage['registrationNumbersTemp']){
     informationRegNumbersTemp = JSON.parse(localStorage['registrationNumbersTemp'])
 }
 
-var createTemp = registrationFunction()
+var createTemp = RegistrationFunction()
 createTemp.initMyLocal(informationRegNumbersTemp)
 
-document.querySelector('.regNumbersListTemp').innerHTML = compliedNuPlate({numberListTemplate: informationRegNumbersTemp})
+document.querySelector('.regNumbersListTemp').innerHTML = compiledNuPlate({numberListTemplate: informationRegNumbersTemp})
 
-function flitterRegTemp(){
-    var flitterTemp = document.querySelector('.radioFlitterTemp:checked')
-    if (flitterTemp){
-        // var checkFlitter = flitterTemp.value
-        var checkFlitter = createTemp.regFlitter(flitterTemp.value)
+function filterRegTemp(){
+    var filterTemp = document.querySelector('.radiofilterTemp:checked')
+    if (filterTemp){
+        // var checkfilter = filterTemp.value
+        var checkfilter = createTemp.regfilter(filterTemp.value)
         console.log('ínside')
-        if (checkFlitter.length == 0){
-            errr.innerHTML = flitterTemp.value +' has no registration number plates!'
+        if (checkfilter.length == 0){
+            errr.innerHTML = filterTemp.value +' has no registration number plates!'
             error()
         }
-        document.querySelector('.regNumbersListTemp').innerHTML = compliedNuPlate({numberListTemplate: checkFlitter})
+        document.querySelector('.regNumbersListTemp').innerHTML = compiledNuPlate({numberListTemplate: checkfilter})
     }else {
         errr.innerHTML = 'Select Town First Please!'
         error()
@@ -52,9 +52,9 @@ function addRegistrationTemp(){
         // var regNumberElem = createElem(regFieldTemp)
         // document.getElementById('RegistrationList').appendChild(regNumberElem)
         localStorage.setItem('registrationNumbersTemp', JSON.stringify(createTemp.getMyLocal()))
-        regNumbersListTemp = compliedNuPlate({numberListTemplate: informationRegNumbersTemp})
-        console.log(compliedNuPlate({numberListTemplate: informationRegNumbersTemp}))
-        document.querySelector('.regNumbersListTemp').innerHTML = compliedNuPlate({numberListTemplate: informationRegNumbersTemp})
+        regNumbersListTemp = compiledNuPlate({numberListTemplate: informationRegNumbersTemp})
+        console.log(compiledNuPlate({numberListTemplate: informationRegNumbersTemp}))
+        document.querySelector('.regNumbersListTemp').innerHTML = compiledNuPlate({numberListTemplate: informationRegNumbersTemp})
         succTemp.innerHTML = "Registration added.."
         setTimeout(function(){
             succTemp.innerHTML = ""
@@ -70,7 +70,7 @@ function error(){
 }
 
 document.querySelector('.addBtnTemp').addEventListener('click', addRegistrationTemp)
-document.querySelector('.showBtnTemp').addEventListener('click', flitterRegTemp)
+document.querySelector('.showBtnTemp').addEventListener('click', filterRegTemp)
 document.querySelector('.resetBtnTemp').addEventListener('click', function(){
     localStorage.removeItem('registrationNumbersTemp')
     document.querySelector('.clearMessageTem').innerHTML = 'The storage will be cleared in 3 seconds!'

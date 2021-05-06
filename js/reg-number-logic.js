@@ -1,4 +1,4 @@
-function registrationFunction(){
+function RegistrationFunction(){
     let myLocal = []
     var error = ''
     
@@ -9,16 +9,11 @@ function registrationFunction(){
             return false
         }
 
-        if (!(name.length >= 9) || !(name.length <= 10)){
+        if (!(name.length >= 6) || !(name.length <= 10)){
             error = 'Please a valid registration number!'
             return false
         }
-
-        // if (!name.startsWith('CY') || !name.startsWith('CA') || !name.startsWith('CJ') || !name.startsWith('CL')){
-        //     error = "We don't register/Support that here!"
-        //     return false
-        // }
-        if (!/([A-Z]){2}\s+([0-9]){3}\s([0-9]){3}/.test(name) && !/([A-Z]){2}\-+([0-9]){3}\-([0-9]){3}/.test(name) && !/[A-Z]{2}\s[0-9]{6}/.test(name)) {
+        if (!/([A-Z]){2}\s+([0-9]){3}\s([0-9]){3}/.test(name) && !/([A-Z]){2}\s+([0-9]){3}\-([0-9]){3}/.test(name) && !/[A-Z]{2}\s[0-9]{4}/.test(name)) {
             error = 'Please Check the registration explained above'
             return false
         }
@@ -44,7 +39,7 @@ function registrationFunction(){
         return myLocal
     }
 
-    function regFlitter(nameOfTown){
+    function regfilter(nameOfTown){
         var array = []
         myLocal.forEach(i => {
             if (i.startsWith(nameOfTown)){
@@ -55,7 +50,7 @@ function registrationFunction(){
     }
 
     return {
-        regFlitter,
+        regfilter,
         initMyLocal,
         getErrors,
         addRegToList,

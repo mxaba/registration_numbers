@@ -10,7 +10,7 @@ let informationRegNumbers = []
 if (localStorage['registrationNumber']){
     informationRegNumbers = JSON.parse(localStorage['registrationNumber'])
 }
-var createRegistration = registrationFunction()
+var createRegistration = RegistrationFunction()
 createRegistration.initMyLocal(informationRegNumbers)
 
 numbersListHTML(createRegistration.getMyLocal())
@@ -66,18 +66,18 @@ function numbersListHTML(name){
     }
 }
 
-function flitter(){
-    var radioFlitter = document.querySelector('.radioFlitter:checked')
-    if (radioFlitter != null){
-        var radioFlitterChecked = radioFlitter.value
-        var regFlitterd = createRegistration.regFlitter(radioFlitterChecked)
+function filter(){
+    var radiofilter = document.querySelector('.radiofilter:checked')
+    if (radiofilter != null){
+        var radiofilterChecked = radiofilter.value
+        var regfilterd = createRegistration.regfilter(radiofilterChecked)
 
-        if (regFlitterd.length == 0){
-            errorMessage.innerHTML =  radioFlitterChecked +' town has no registration number plates!'
+        if (regfilterd.length == 0){
+            errorMessage.innerHTML =  radiofilterChecked +' town has no registration number plates!'
             errors()
         }
         document.getElementById('RegistrationList').innerHTML = ''
-        numbersListHTML(regFlitterd)
+        numbersListHTML(regfilterd)
     } else {
         errorMessage.innerHTML = 'Select Town First Please!'
         errors()
@@ -85,7 +85,7 @@ function flitter(){
 }
 
 
-showBtn.addEventListener('click', flitter)
+showBtn.addEventListener('click', filter)
 addBut.addEventListener('click', addClicked)
 
 resetBtn.addEventListener('click', function(){
