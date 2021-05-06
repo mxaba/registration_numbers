@@ -98,21 +98,21 @@ describe('Plate Number Registration', function(){
             registration.addRegToList('CL 129 456')
             registration.addRegToList('CL-129-456')
         it('Should return Olny from Cape Town', function(){   
-            assert.deepEqual([ 'CA 123 456', 'CA 123 496', 'CA 124 456', 'CA 124456' ,'CA 129 456'], registration.regfilter('CA')) 
+            assert.deepEqual([ 'CA 123 456', 'CA 123 496', 'CA 124 456', 'CA 124456' ,'CA 129 456'], registration.regFlitter('CA')) 
 
             // assert.equal('', registration.getMyLocal())
             // assert.equal('', registration.getMyLocal()) 
         })
 
         it('Should return Olny from Stellenbosch', function(){   
-            assert.deepEqual([ 'CL 123 456', 'CL 123 496', 'CL 124 456', 'CL 124456' ,'CL 129 456',], registration.regfilter('CL')) 
+            assert.deepEqual([ 'CL 123 456', 'CL 123 496', 'CL 124 456', 'CL 124456' ,'CL 129 456',], registration.regFlitter('CL')) 
 
             // assert.equal('', registration.getMyLocal())
             // assert.equal('', registration.getMyLocal()) 
         })
 
         it('Should return Olny from Paarl', function(){   
-            assert.deepEqual([ 'CJ 123 456', 'CJ 123 496', 'CJ 124 456', 'CJ 124456' ,'CJ 129 456' ], registration.regfilter('CJ')) 
+            assert.deepEqual([ 'CJ 123 456', 'CJ 123 496', 'CJ 124 456', 'CJ 124456' ,'CJ 129 456' ], registration.regFlitter('CJ')) 
 
             // assert.equal('', registration.getMyLocal())
             // assert.equal('', registration.getMyLocal()) 

@@ -39,7 +39,7 @@ function RegistrationFunction(){
         return myLocal
     }
 
-    function regfilter(nameOfTown){
+    function regFlitter(nameOfTown){
         var array = []
         myLocal.forEach(i => {
             if (i.startsWith(nameOfTown)){
@@ -50,7 +50,7 @@ function RegistrationFunction(){
     }
 
     return {
-        regfilter,
+        regFlitter,
         initMyLocal,
         getErrors,
         addRegToList,
